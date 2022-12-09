@@ -1,5 +1,5 @@
 const net = require('net');
-
+const port= process.env.PORT || 4000;
 const server = net.createServer()
 
 server.on('connection', (socket)=>{
@@ -16,6 +16,6 @@ server.on('connection', (socket)=>{
         console.log(err.message)
     })
 })
-server.listen(4000, ()=>{
+server.listen(port, ()=>{
     console.log('servidor esta escuchando en la puerta', server.address().port)
 })
